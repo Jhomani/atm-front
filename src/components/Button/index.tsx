@@ -1,9 +1,5 @@
-import {
-  useRouter
-} from 'next/router';
-import React, {
-  useRef
-} from 'react';
+import {useRouter} from 'next/router';
+import React, {useRef} from 'react';
 
 interface InButton {
   shadow?: 'primary' | 'normal';

@@ -1,16 +1,8 @@
 import Layout from '@landing/Layout';
-import {
-  setDefaultValues
-} from '@redux/actions/app';
-import {
-  getNavigatorLocale, setDefaultColorMode
-} from '@utils/global';
-import React, {
-  memo, useEffect
-} from 'react';
-import {
-  useDispatch
-} from 'react-redux';
+import {setDefaultValues} from '@redux/actions/app';
+import {getNavigatorLocale, setDefaultColorMode} from '@utils/global';
+import React, {memo, useEffect} from 'react';
+import {useDispatch} from 'react-redux';
 
 // import moment from 'moment';
 

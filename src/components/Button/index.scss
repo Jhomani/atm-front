@@ -1,4 +1,3 @@
-// common 
 .commonPress {
   height: 0;
   width: 0;
@@ -8,7 +7,7 @@
   border-radius: 50px;
 }
 
-// developing 
+// developing
 [class^="btn-"] {
   position: relative;
   overflow: hidden;
@@ -37,7 +36,7 @@
   svg { margin-right: 8px; }
 
   span {
-    &:extend(.txt-button);
+    @extend .txt-button;
     position: relative;
     color: inherit;
   }
@@ -51,8 +50,8 @@
   }
 
   &.onpressed::before {
-    &:extend(.commonPress);
-    background-color: @dynamic-press !important;
+    @extend .commonPress;
+    background-color: $dynamic-press !important;
   }
 }
 
@@ -61,25 +60,25 @@
   fill: rgba(#fff, 87);
 
   &:hover::before {
-    background-color: @light-hover;
+    background-color: $light-hover;
   }
 
   &.onpressed::before {
-    &:extend(.commonPress);
-    background-color: @light-press !important;
+    @extend .commonPress;
+    background-color: $light-press !important;
   }
 }
 
 .btn-primary {
-  background-color: @primary-variant;
+  background-color: $primary-variant;
 }
 
 .btn-transparent, .btn-secondary {
-  color: @text-emphasis;
-  fill: @text-emphasis;
+  color: var(--text-emphasis);
+  fill: var(--text-emphasis);
 
   &:hover::before {
-    background-color: @dynamic-hover;
+    background-color: $dynamic-hover;
   }
 }
 
@@ -88,18 +87,18 @@
 }
 
 .btn-secondary {
-  background-color: @secondary;
+  background-color: $secondary;
 
 }
 
 .btn-gradient {
-  background-image: linear-gradient(to left, 
-    @primary-variant 0% 20% , 
-    @primary 40% 50%, 
-    @primary-variant 70% 100%);
-  box-shadow: 
-    0px 4px 17px rgba(@primary-variant, 0.8), 
-    0px -4px 17px rgba(@primary-variant, 0.5);
+  background-image: linear-gradient(to left,
+    $primary-variant 0% 20% ,
+    $primary 40% 50%,
+    $primary-variant 70% 100%);
+  box-shadow:
+    0px 4px 17px rgba($primary-variant, 0.8),
+    0px -4px 17px rgba($primary-variant, 0.5);
   background-size: 300% 100%;
   background-position-x: 100%;
   animation: gradientBackground 1.5s ease infinite;

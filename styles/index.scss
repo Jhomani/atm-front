@@ -1,0 +1,56 @@
+@import "./global/index.scss";
+@import "./components/index.scss";
+@import './componets.scss';
+@import "./landing/index.scss";
+
+html, *::before, *::after, * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: var(--text-emphasis);
+  font-family: 'NoirPro', sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+button, li, a, .options {
+  outline: 0;
+}
+
+html {
+  background-color: $bg-color;
+  font-size: 16px;
+}
+
+:root {
+  --bg-color: #f0f0f0;
+  --bg-navbar: #fff;
+  --secondary: #E8E8E8;
+
+  --text-emphasis: #{$dark-emphasis};
+  --text-helper: rgba(#000, .60);
+  --text-disabled: rgba(#000, .38);
+
+  --dynamic-hover: $dark-hover;
+  --dynamic-press: $dark-press;
+}
+
+.dark-mode {
+  --bg-color: #18191a;
+  --bg-navbar: #242526;
+  --secondary: #3A3B3C;
+
+  --text-emphasis: #{$light-emphasis};
+  --text-helper: rgba(#fff, .60);
+  --text-disabled: rgba(#fff, .38);
+
+  --dynamic-hover: $light-hover;
+  --dynamic-press: $light-press;
+}

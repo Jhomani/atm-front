@@ -1,0 +1,47 @@
+@use 'sass:color';
+
+$light-hover: rgba(#fff, .04);
+$dark-hover: rgba(#000, .04);
+
+$light-press: rgba(#fff, .1);
+$dark-press: rgba(#000, .1);
+
+$light-emphasis: color.adjust(#fff, $alpha: -0.13);
+$dark-emphasis: color.adjust(#000, $alpha: -0.13);
+
+$link-color: #1890ff;
+$success-color: #43FF8E;
+$warning-color: #FFD465;
+$error-color: #FF4A4A;
+
+$primary: #399EFC;
+$primary-variant: #0f85f2;
+$secondary: var(--secondary);
+
+//text-styles
+$font-family: 'noir-pro';
+$primary-emphasis: rgba($primary-variant, .87);
+$primary-helper: rgba($primary-variant, .60);
+$primary-disabled: rgba($primary-variant, .38);
+$text-helper: var(--text-helper);
+$text-disabled: var(--text-disabled);
+
+$bg-color: var(--bg-color);
+$bg-navbar: var(--bg-navbar);
+
+$elavation5: 3px 3px 20px -1px rgba(0, 0, 0, 0.1);
+$elavation8: 0px 0px 25px 5px rgba(#000, 0.15);
+$elavation10: 0px 0px 20px 5px rgba(66, 66, 66, 0.2);
+$elavation15: 5px 5px 20px 3px rgba(0, 0, 0, 0.1),
+    -1px -1px 20px rgba(66, 66, 66, 0.25);
+
+// status of accions
+$primary-selected: rgba($primary, .1);
+$dynamic-hover: var(--dynamic-hover);
+$dynamic-press: var(--dynamic-press);
+$primary-hover: #3197f4;
+
+$primary-text-selected: rgba($primary, .87);
+
+// lengths
+$btn-height: 24px;

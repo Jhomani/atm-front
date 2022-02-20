@@ -1,8 +1,8 @@
 .navbar-component {
   height: 60px;
   min-height: 60px;
-  background-color: @bg-navbar;
-  box-shadow: @elavation8;
+  background-color: $bg-navbar;
+  box-shadow: $elavation8;
   position: sticky;
   position: -webkit-sticky;
   transition: background-color .2s ease;
@@ -36,17 +36,17 @@
       }
 
       a.nav-item {
-        &:extend(.sub-title1);
-        color: @primary-emphasis;
+        @extend .sub-title1;
+        color: $primary-emphasis;
         text-decoration: none;
         transition: color .3s ease-in-out;
 
         b {
-          color: @primary-emphasis;
+          color: $primary-emphasis;
         }
 
         &:hover {
-          color: rgba(@primary, .95);
+          color: rgba($primary, .95);
         }
       }
     }

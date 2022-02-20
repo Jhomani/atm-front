@@ -1,15 +1,11 @@
 import globalEvents from '@utils/global-events';
 import withReduxStore from '@utils/with-redux-store';
 import Router from 'next/router';
-import React, {
-  useEffect
-} from 'react';
-import {
-  Provider
-} from 'react-redux';
+import React, {useEffect} from 'react';
+import {Provider} from 'react-redux';
 import Main from 'src/containers/Main';
 // import 'nprogress/nprogress.css';
-import 'styles/index.less';
+import 'styles/index.scss';
 
 
 // NProgress.configure({ showSpinner: false });
