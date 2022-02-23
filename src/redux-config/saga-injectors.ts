@@ -1,9 +1,7 @@
 import {
- InStore 
-} from './reducer-injectors';
-import {
- DAEMON, ONCE_TILL_UNMOUNT, RESTART_ON_REMOUNT 
+  DAEMON, ONCE_TILL_UNMOUNT, RESTART_ON_REMOUNT
 } from './constants';
+import {InStore} from './reducer-injectors';
 
 const allowedModes = [RESTART_ON_REMOUNT, DAEMON, ONCE_TILL_UNMOUNT];
 
@@ -18,7 +16,7 @@ export function injectSagaFactory(store: InStore) {
       ...descriptor,
       mode: descriptor.mode ?? DAEMON
     };
-    const { saga, mode } = newDescriptor ?? {};
+    const {saga, mode} = newDescriptor ?? {};
 
     let hasSaga = Reflect.has(store.injectedSagas, key);
 

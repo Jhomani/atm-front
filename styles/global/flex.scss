@@ -1,18 +1,18 @@
 /*flex Styles*/
 .dp-flex {
-  display: flex !important;
+  display: flex;
 }
 .dp-none {
-  display: none !important;
+  display: none;
 }
 .dp-inline-block {
-  display: inline-block !important;
+  display: inline-block;
 }
 .dp-block {
-  display: block !important;
+  display: block;
 }
 .dp-inline-flex {
-  display: inline-flex !important;
+  display: inline-flex;
 }
 .flex-1 {
   -webkit-flex: 1 1 auto;
@@ -21,28 +21,28 @@
 }
 /*Display Flex Classes*/
 .flex-row {
-  display: -webkit-flex !important;
-  display: -ms-flexbox !important;
-  display: -ms-flex !important;
-  display: flex !important;
-  -webkit-flex-direction: row !important;
-  -ms-flex-direction: row !important;
-  flex-direction: row !important;
-  -webkit-flex-wrap: wrap !important;
-  -ms-flex-wrap: wrap !important;
-  flex-wrap: wrap !important;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 .flex-column {
-  display: -webkit-flex !important;
-  display: -ms-flexbox !important;
-  display: -ms-flex !important;
-  display: flex !important;
-  -webkit-flex-direction: column !important;
-  -ms-flex-direction: column !important;
-  flex-direction: column !important;
-  -webkit-flex-wrap: nowrap !important;
-  -ms-flex-wrap: nowrap !important;
-  flex-wrap: nowrap !important;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
 }
 .flex-nowrap {
   flex-wrap: nowrap !important;

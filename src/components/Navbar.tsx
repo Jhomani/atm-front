@@ -1,11 +1,7 @@
-import {
-  useStatus
-} from '@utils/custom-hook';
+import {useStatus} from '@utils/custom-hook';
 import globalEvents from '@utils/global-events';
 import Link from 'next/link';
-import {
-  useRouter
-} from 'next/router';
+import {useRouter} from 'next/router';
 import React, {
   memo, useEffect, useRef
 } from 'react';

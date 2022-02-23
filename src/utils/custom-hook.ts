@@ -1,8 +1,4 @@
-/* eslint-disable @typescript-eslint/ban-types */
-// const { useReducer } = require("react");
-import {
-useReducer, useState
-} from 'react';
+import {useReducer, useState} from 'react';
 
 type SetStateFn<T> = (a: Partial<T> | ((x: T) => Partial<T>)) => void;
 type StateFn<T> = (a: T) => T;
@@ -10,13 +6,9 @@ type StateFn<T> = (a: T) => T;
 const reducer = (state, action) => {
   switch (typeof action) {
     case 'function':
-      return {
-...state, ...action(state)
-};
+      return {...state, ...action(state)};
     default:
-      return {
-...state, ...action
-};
+      return {...state, ...action};
   }
 };
 
@@ -30,9 +22,7 @@ export const useStatus = <T>(initialState: T): [T, SetStateFn<T>, Object] => {
 
   const updateState = (updateValue: StateFn<T> | Object): void => {
     if (typeof updateValue === 'function')
-      setState(prevState => ({
-...prevState, ...updateValue(prevState)
-}));
+      setState(prevState => ({...prevState, ...updateValue(prevState)}));
     else {
       let sameState = true;
 
@@ -44,9 +34,7 @@ export const useStatus = <T>(initialState: T): [T, SetStateFn<T>, Object] => {
       }
 
       if (!sameState)
-        setState(prevState => ({
-...prevState, ...updateValue
-}));
+        setState(prevState => ({...prevState, ...updateValue}));
     }
   };
 
@@ -55,4 +43,14 @@ export const useStatus = <T>(initialState: T): [T, SetStateFn<T>, Object] => {
   };
 
   return [state, updateState, rightState];
+};
+
+export const useForceUpdate = () => {
+  const [value, setValue] = useState(false);
+
+  const refreshComponent = () => {
+    setValue(!!value);
+  };
+
+  return refreshComponent;
 };

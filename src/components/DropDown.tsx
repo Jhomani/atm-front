@@ -1,6 +1,4 @@
-import {
-  ShortArrow
-} from '@components/icons';
+import {ShortArrow} from '@components/icons';
 import React, {
   useMemo, useRef, useState
 } from 'react';
@@ -54,7 +52,6 @@ export const Select = (props: SelectIn) => {
       setTimeout(() => setDisplay(false), 400);
     }
   };
-
 
   return <>
     <div className="select-container" ref={container}>

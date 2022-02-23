@@ -1,3 +1,11 @@
+declare interface InAppState {
+  navCollapsed: boolean,
+  pathname: string,
+  width: number,
+  locale: 'EN' | 'ES',
+  mode: 'light' | 'dark'
+}
+
 declare interface MainStorage {
   auth: {
     userToken: string;

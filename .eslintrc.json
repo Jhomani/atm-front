@@ -1,8 +1,8 @@
 {
   "root": true,
   "extends": [
-    "eslint:recommended",
     "plugin:react/recommended",
+    "eslint:recommended",
     "plugin:@typescript-eslint/recommended"
   ],
   "parser": "@typescript-eslint/parser",
@@ -22,8 +22,33 @@
   "rules": {
     "@typescript-eslint/ban-types": 0,
     "react/prop-types": 0,
+    "react/jsx-closing-bracket-location": [
+      2,
+      "tag-aligned"
+    ],
+    "react/jsx-first-prop-new-line": [
+      2,
+      "multiline"
+    ],
+    "react/jsx-max-props-per-line": [
+      2,
+      {
+        "maximum": 1,
+        "when": "multiline"
+      }
+    ],
+    "react/jsx-indent-props": [
+      2,
+      2
+    ],
     "semi": 2,
     "comma-dangle": 2,
+    "no-multiple-empty-lines": [
+      2,
+      {
+        "max": 1
+      }
+    ],
     "object-curly-newline": [
       2,
       {
@@ -43,25 +68,6 @@
       {
         "avoidEscape": true
       }
-    ],
-    "react/jsx-closing-bracket-location": [
-      2,
-      "tag-aligned"
-    ],
-    "react/jsx-first-prop-new-line": [
-      2,
-      "multiline"
-    ],
-    "react/jsx-max-props-per-line": [
-      2,
-      {
-        "maximum": 1,
-        "when": "multiline"
-      }
-    ],
-    "react/jsx-indent-props": [
-      2,
-      2
     ]
   },
   "ignorePatterns": [

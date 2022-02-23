@@ -2,12 +2,8 @@
 //@ts-nocheck
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import React from 'react';
-import {
-ReactReduxContext
-} from 'react-redux';
-import {
-DAEMON
-} from './constants';
+import {ReactReduxContext} from 'react-redux';
+import {DAEMON} from './constants';
 import getInjectors from './saga-injectors';
 
 
@@ -24,9 +20,7 @@ const injectSagaWrapper = ({key, saga, mode = DAEMON}) => WrappedComponent => {
 
       this.injectors = getInjectors(context.store);
 
-      this.injectors.injectSaga(key, {
-saga, mode
-}, this.props);
+      this.injectors.injectSaga(key, {saga, mode}, this.props);
     }
 
     componentWillUnmount() {
@@ -45,9 +39,7 @@ const useInjectSaga = ({key, saga, mode}) => {
   const context = React.useContext(ReactReduxContext);
   React.useEffect(() => {
     const injectors = getInjectors(context.store);
-    injectors.injectSaga(key, {
-saga, mode
-});
+    injectors.injectSaga(key, {saga, mode});
 
     return () => {
       injectors.ejectSaga(key);

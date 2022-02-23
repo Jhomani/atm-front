@@ -44,10 +44,14 @@ const LandingLayout = ({children}: InLandingLayout) => {
       label:
         <Button
           type="secondary"
-          onClick={toggleColorMode}
+          onPress={toggleColorMode}
           icon={<LightMode size="20" />}
           shape="round"
         />
+    },
+    {
+      path: '/handle-tags',
+      label: 'Contact me'
     }
   ];
 

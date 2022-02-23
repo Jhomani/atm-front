@@ -3,9 +3,7 @@ import global from '@main/redux/reducer';
 // import landingPage from "@redux/reducers/landingPage";
 import app from '@redux/reducers/app';
 import auth from '@redux/reducers/auth';
-import {
-combineReducers
-} from 'redux';
+import {combineReducers} from 'redux';
 
 export default function createReducer(asyncReducers?) {
   return combineReducers({
