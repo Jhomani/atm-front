@@ -1,8 +1,7 @@
 {
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "eslint.enable": true,
-  "editor.rulers": [
-    80
-  ],
+  "editor.rulers": [80],
   "editor.tabCompletion": "on",
   "editor.tabSize": 2,
   "editor.trimAutoWhitespace": true,
@@ -32,8 +31,5 @@
   "typescript.preferences.quoteStyle": "single",
   "eslint.run": "onSave",
   "eslint.nodePath": "./node_modules",
-  "eslint.validate": [
-    "javascript",
-    "typescript"
-  ]
+  "eslint.validate": ["javascript", "typescript"]
 }

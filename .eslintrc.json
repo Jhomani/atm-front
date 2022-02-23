@@ -2,6 +2,7 @@
   "root": true,
   "extends": [
     "plugin:react/recommended",
+    "prettier",
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended"
   ],
@@ -12,24 +13,13 @@
     },
     "ecmaVersion": 12,
     "sourceType": "module",
-    "project": [
-      "./tsconfig.json"
-    ]
+    "project": ["./tsconfig.json"]
   },
-  "plugins": [
-    "@typescript-eslint"
-  ],
+  "plugins": ["react", "prettier", "@typescript-eslint"],
   "rules": {
-    "@typescript-eslint/ban-types": 0,
     "react/prop-types": 0,
-    "react/jsx-closing-bracket-location": [
-      2,
-      "tag-aligned"
-    ],
-    "react/jsx-first-prop-new-line": [
-      2,
-      "multiline"
-    ],
+    "react/jsx-closing-bracket-location": [2, "tag-aligned"],
+    "react/jsx-first-prop-new-line": [2, "multiline"],
     "react/jsx-max-props-per-line": [
       2,
       {
@@ -37,31 +27,15 @@
         "when": "multiline"
       }
     ],
-    "react/jsx-indent-props": [
-      2,
-      2
-    ],
+    "react/jsx-indent-props": [2, 2],
     "semi": 2,
-    "comma-dangle": 2,
     "no-multiple-empty-lines": [
       2,
       {
         "max": 1
       }
     ],
-    "object-curly-newline": [
-      2,
-      {
-        "ObjectExpression": {
-          "minProperties": 3,
-          "multiline": true
-        },
-        "ImportDeclaration": {
-          "minProperties": 3,
-          "multiline": true
-        }
-      }
-    ],
+    "@typescript-eslint/ban-types": 0,
     "quotes": [
       2,
       "single",
@@ -70,10 +44,5 @@
       }
     ]
   },
-  "ignorePatterns": [
-    "src/**/*.test.ts",
-    "*/*.js",
-    "*.js",
-    "src/frontend/generated/*"
-  ]
+  "ignorePatterns": ["src/**/*.test.ts", "*/*.js", "*.js", "src/frontend/generated/*"]
 }

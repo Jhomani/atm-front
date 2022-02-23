@@ -6,7 +6,6 @@ import {ReactReduxContext} from 'react-redux';
 import {DAEMON} from './constants';
 import getInjectors from './saga-injectors';
 
-
 const injectSagaWrapper = ({key, saga, mode = DAEMON}) => WrappedComponent => {
   class InjectSaga extends React.Component {
     static WrappedComponent = WrappedComponent;

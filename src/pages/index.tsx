@@ -1,6 +1,5 @@
 import {
-  Button,
-  Language, Modal, Select
+  Button, DropDown, Language, Modal
 } from '@components/index';
 import React, {
   memo, useEffect, useState
@@ -64,7 +63,7 @@ const IndexPage = () => {
         <Language langKey="landingTitle" />
       </h2>
 
-      <Select
+      <DropDown
         options={options}
         initial={0}
         onSelected={handleSelected}

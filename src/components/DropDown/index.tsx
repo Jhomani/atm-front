@@ -1,7 +1,5 @@
 import {ShortArrow} from '@components/icons';
-import React, {
-  useMemo, useRef, useState
-} from 'react';
+import React, {useMemo, useRef, useState} from 'react';
 
 interface OptionIn {
   key: string | number;
@@ -11,12 +9,12 @@ interface OptionIn {
 interface SelectIn {
   options: OptionIn[];
   initial: string | number;
-  onSelected(selected: string | number): void;
+  onSelected(a: string | number): void;
 }
 
 const optionsObj = {};
 
-export const Select = (props: SelectIn) => {
+export const DropDown = (props: SelectIn) => {
   const {initial, options, onSelected} = props;
 
   const [display, setDisplay] = useState(false);
@@ -24,7 +22,7 @@ export const Select = (props: SelectIn) => {
   const container = useRef(null);
 
   useMemo(() => {
-    options.forEach(({key, label}) => optionsObj[key] = label);
+    options.forEach(({key, label}) => (optionsObj[key] = label));
   }, [options]);
 
   const toggleOptions = () => {
@@ -53,43 +51,37 @@ export const Select = (props: SelectIn) => {
     }
   };
 
-  return <>
-    <div className="select-container" ref={container}>
-      <div className="selected" onClick={toggleOptions}>
-        <input
-          type="button"
-          onBlur={() => display && closeOptions()}
-          value={optionsObj[selected]}
-        />
-        <ShortArrow color="var(--text-emphasis)" className="selectIcon" />
-      </div>
-      {display &&
-        <ul className="options">
-          {options.map((item, i) =>
-            item.key == selected
-              ? (
+  return (
+    <>
+      <div role="alert" className="select-container" ref={container} style={{}}>
+        <div className="selected" onClick={toggleOptions}>
+          <input
+            type="button"
+            onBlur={() => display && closeOptions()}
+            value={optionsObj[selected]}
+          />
+          <ShortArrow color="var(--text-emphasis)" className="selectIcon" />
+        </div>
+        {display && (
+          <ul className="options">
+            {options.map((item, i) =>
+              item.key == selected ? (
                 <li
                   key={i}
                   className="primary-selected-btn"
                   onMouseDown={handleSelected.bind({}, item.key)}
                 >
-                  <span>
-                    {item.label}
-                  </span>
-                </li>)
-              : (
-                <li
-                  key={i}
-                  onMouseDown={handleSelected.bind({}, item.key)}
-                >
-                  <span>
-                    {item.label}
-                  </span>
+                  <span>{item.label}</span>
                 </li>
-              ))
-          }
-        </ul>
-      }
-    </div>
-  </>;
+              ) : (
+                <li key={i} onMouseDown={handleSelected.bind({}, item.key)}>
+                  <span>{item.label}</span>
+                </li>
+              )
+            )}
+          </ul>
+        )}
+      </div>
+    </>
+  );
 };

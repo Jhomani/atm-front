@@ -1,9 +1,7 @@
-import {
-  DAEMON, ONCE_TILL_UNMOUNT, RESTART_ON_REMOUNT
-} from './constants';
+import {DAEMON, ONCE_TILL_UNMOUNT} from './constants';
 import {InStore} from './reducer-injectors';
 
-const allowedModes = [RESTART_ON_REMOUNT, DAEMON, ONCE_TILL_UNMOUNT];
+// const allowedModes = [RESTART_ON_REMOUNT, DAEMON, ONCE_TILL_UNMOUNT];
 
 interface InDescriptor {
   saga: Function;
@@ -14,7 +12,7 @@ export function injectSagaFactory(store: InStore) {
   return function injectSaga(key: string, descriptor: InDescriptor, args) {
     const newDescriptor = {
       ...descriptor,
-      mode: descriptor.mode ?? DAEMON
+      mode: descriptor.mode ?? DAEMON,
     };
     const {saga, mode} = newDescriptor ?? {};
 
@@ -32,7 +30,7 @@ export function injectSagaFactory(store: InStore) {
       /* eslint-disable no-param-reassign */
       store.injectedSagas[key] = {
         ...newDescriptor,
-        task: store.runSaga(saga, args)
+        task: store.runSaga(saga, args),
       };
       /* eslint-enable no-param-reassign */
     }
@@ -54,9 +52,8 @@ export function ejectSagaFactory(store: InStore) {
 }
 
 export default function getInjectors(store: InStore) {
-
   return {
     injectSaga: injectSagaFactory(store),
-    ejectSaga: ejectSagaFactory(store)
+    ejectSaga: ejectSagaFactory(store),
   };
 }

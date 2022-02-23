@@ -1,6 +1,6 @@
 import {LightMode} from '@components/icons';
 import {
-  Button, getRawMessage, Navbar, Select
+  Button, DropDown, getRawMessage, Navbar
 } from '@components/index';
 import {switchLanguage} from '@redux/actions/app';
 import {toggleColorMode} from '@utils/global';
@@ -34,7 +34,7 @@ const LandingLayout = ({children}: InLandingLayout) => {
   const items = [
     {
       label:
-        <Select
+        <DropDown
           options={options}
           initial={locale}
           onSelected={handleSelected}

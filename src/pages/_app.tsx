@@ -7,7 +7,6 @@ import Main from 'src/containers/Main';
 // import 'nprogress/nprogress.css';
 import 'styles/index.scss';
 
-
 // NProgress.configure({ showSpinner: false });
 
 Router.events.on('routeChangeStart', (url) => {
