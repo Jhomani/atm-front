@@ -1,17 +1,21 @@
 .select-container {
   display: inline-block;
 
-  &, .selected {
+  &.primary > button[role] {
+    color: $primary-emphasis;
+  }
+
+  &,
+  .selected {
     position: relative;
     min-width: 98px;
     height: 26px;
     border-radius: 10px;
   }
 
-  .selected > input {
+  .selected > button[role] {
     @extend .sub-title1;
     position: absolute;
-    color: $primary-emphasis;
     padding: 3px 7px;
     border: 0;
     text-align: start;
@@ -23,19 +27,19 @@
     z-index: 1;
   }
 
-  .selected  .selectIcon {
+  .selected .selectIcon {
     position: absolute;
-    transition: transform .5s ease;
+    transition: transform 0.5s ease;
     transform-origin: center;
     transform: translateY(50%);
     right: 6px;
     bottom: 45%;
   }
 
-  .selected > input:focus{
+  .selected > button[role]:focus {
     color: $primary-helper;
   }
-  .selected > input:focus + .selectIcon {
+  .selected > button[role]:focus + .selectIcon {
     transform: translateY(50%) rotate(180deg);
   }
 
@@ -43,7 +47,7 @@
     @extend .txt-body2;
     background-color: $bg-navbar;
     border-radius: 9px;
-    animation: openOptions .5s;
+    animation: openOptions 0.5s;
     overflow: hidden;
     position: absolute;
     right: 0;
@@ -55,7 +59,7 @@
 
     li {
       position: relative;
-      padding: 7.5px 7px ;
+      padding: 7.5px 7px;
 
       span {
         color: $primary-helper;
@@ -72,7 +76,7 @@
       &:hover::before {
         background-color: $dynamic-hover;
       }
-      &:first-child{
+      &:first-child {
         padding-top: 8.5px;
       }
       &:last-child {
@@ -81,7 +85,7 @@
     }
 
     &.closeAnimation {
-      animation: closeOptions .5s;
+      animation: closeOptions 0.5s;
     }
   }
 }

@@ -9,20 +9,23 @@ interface OptionIn {
 interface SelectIn {
   options: OptionIn[];
   initial: string | number;
+  type?: 'primary' | 'dynamic';
   onSelected(a: string | number): void;
 }
 
-const optionsObj = {};
-
 export const DropDown = (props: SelectIn) => {
-  const {initial, options, onSelected} = props;
+  const {type = 'dynamic', initial, options, onSelected} = props;
 
   const [display, setDisplay] = useState(false);
   const [selected, setSelected] = useState(initial);
   const container = useRef(null);
 
-  useMemo(() => {
-    options.forEach(({key, label}) => (optionsObj[key] = label));
+  const optionsObj = useMemo(() => {
+    const res = {};
+
+    options.forEach(({key, label}) => (res[key] = label));
+
+    return res;
   }, [options]);
 
   const toggleOptions = () => {
@@ -42,7 +45,7 @@ export const DropDown = (props: SelectIn) => {
 
     if (node) {
       const opts: HTMLElement = node.querySelector('ul.options');
-      const input: HTMLElement = node.querySelector('input[type]');
+      const input: HTMLElement = node.querySelector('button[role]');
 
       if (opts) opts.classList.add('closeAnimation');
       if (input) input.blur();
@@ -52,36 +55,32 @@ export const DropDown = (props: SelectIn) => {
   };
 
   return (
-    <>
-      <div role="alert" className="select-container" ref={container} style={{}}>
-        <div className="selected" onClick={toggleOptions}>
-          <input
-            type="button"
-            onBlur={() => display && closeOptions()}
-            value={optionsObj[selected]}
-          />
-          <ShortArrow color="var(--text-emphasis)" className="selectIcon" />
-        </div>
-        {display && (
-          <ul className="options">
-            {options.map((item, i) =>
-              item.key == selected ? (
-                <li
-                  key={i}
-                  className="primary-selected-btn"
-                  onMouseDown={handleSelected.bind({}, item.key)}
-                >
-                  <span>{item.label}</span>
-                </li>
-              ) : (
-                <li key={i} onMouseDown={handleSelected.bind({}, item.key)}>
-                  <span>{item.label}</span>
-                </li>
-              )
-            )}
-          </ul>
-        )}
+    <div className={`select-container ${type}`} ref={container} style={{}}>
+      <div className="selected" onClick={toggleOptions}>
+        <button role="switch" onBlur={() => display && closeOptions()}>
+          {optionsObj[selected]}
+        </button>
+        <ShortArrow color="var(--text-emphasis)" className="selectIcon" />
       </div>
-    </>
+      {display && (
+        <ul className="options">
+          {options.map((item, i) =>
+            item.key == selected ? (
+              <li
+                key={i}
+                className="primary-selected-btn"
+                onMouseDown={handleSelected.bind({}, item.key)}
+              >
+                <span>{item.label}</span>
+              </li>
+            ) : (
+              <li key={i} onMouseDown={handleSelected.bind({}, item.key)}>
+                <span>{item.label}</span>
+              </li>
+            )
+          )}
+        </ul>
+      )}
+    </div>
   );
 };
