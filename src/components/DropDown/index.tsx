@@ -13,6 +13,23 @@ interface SelectIn {
   onSelected(a: string | number): void;
 }
 
+function getIconColor(type: string) {
+  let resp: string;
+
+  switch (type) {
+    case 'primary': {
+      resp = 'primary-emphasis';
+      break;
+    }
+    default: {
+      resp = 'txt-emphasis';
+      break;
+    }
+  }
+
+  return resp;
+}
+
 export const DropDown = (props: SelectIn) => {
   const {type = 'dynamic', initial, options, onSelected} = props;
 
@@ -60,7 +77,7 @@ export const DropDown = (props: SelectIn) => {
         <button role="switch" onBlur={() => display && closeOptions()}>
           {optionsObj[selected]}
         </button>
-        <ShortArrow color="var(--text-emphasis)" className="selectIcon" />
+        <ShortArrow colorClass={getIconColor(type)} className="selectIcon" />
       </div>
       {display && (
         <ul className="options">
@@ -68,7 +85,7 @@ export const DropDown = (props: SelectIn) => {
             item.key == selected ? (
               <li
                 key={i}
-                className="primary-selected-btn"
+                className="selected"
                 onMouseDown={handleSelected.bind({}, item.key)}
               >
                 <span>{item.label}</span>

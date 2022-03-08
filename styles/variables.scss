@@ -1,28 +1,43 @@
 @use 'sass:color';
 
-$light-hover: rgba(#fff, .04);
-$dark-hover: rgba(#000, .04);
+// LIGHT MODE
+$light-hover: rgba(#fff, 0.04);
+$light-press: rgba(#fff, 0.08);
+$light-selected: rgba(#fff, 0.08);
 
-$light-press: rgba(#fff, .1);
-$dark-press: rgba(#000, .1);
+$light-emphasis: rgba(#fff, 0.87);
+$light-helper: rgba(#fff, 0.6);
+$light-disabled: rgba(#fff, 0.38);
 
-$light-emphasis: color.adjust(#fff, $alpha: -0.13);
-$dark-emphasis: color.adjust(#000, $alpha: -0.13);
+// DARK MODE
+$dark-hover: rgba(#000, 0.04);
+$dark-press: rgba(#000, 0.08);
+$dark-selected: rgba(#000, 0.08);
 
-$link-color: #1890ff;
-$success-color: #43FF8E;
-$warning-color: #FFD465;
-$error-color: #FF4A4A;
+$dark-emphasis: rgba(#000, 0.87);
+$dark-helper: rgba(#000, 0.6);
+$dark-disabled: rgba(#000, 0.38);
 
-$primary: #399EFC;
+// PRIMARY MODE
+$primary: #399efc;
 $primary-variant: #0f85f2;
+$primary-hover: rgba($primary, 0.04);
+$primary-selected: rgba($primary, 0.1);
+
+$primary-emphasis: rgba($primary-variant, 0.87);
+$primary-helper: rgba($primary-variant, 0.6);
+$primary-disabled: rgba($primary-variant, 0.38);
+
 $secondary: var(--secondary);
+// STATES
+$link-color: #1890ff;
+$success-color: #43ff8e;
+$warning-color: #ffd465;
+$error-color: #ff4a4a;
 
 //text-styles
 $font-family: 'noir-pro';
-$primary-emphasis: rgba($primary-variant, .87);
-$primary-helper: rgba($primary-variant, .60);
-$primary-disabled: rgba($primary-variant, .38);
+
 $text-helper: var(--text-helper);
 $text-disabled: var(--text-disabled);
 
@@ -33,15 +48,13 @@ $elavation5: 3px 3px 20px -1px rgba(0, 0, 0, 0.1);
 $elavation8: 0px 0px 25px 5px rgba(#000, 0.15);
 $elavation10: 0px 0px 20px 5px rgba(66, 66, 66, 0.2);
 $elavation15: 5px 5px 20px 3px rgba(0, 0, 0, 0.1),
-    -1px -1px 20px rgba(66, 66, 66, 0.25);
+  -1px -1px 20px rgba(66, 66, 66, 0.25);
 
 // status of accions
-$primary-selected: rgba($primary, .1);
-$dynamic-hover: var(--dynamic-hover);
-$dynamic-press: var(--dynamic-press);
-$primary-hover: #3197f4;
+// $dynamic-hover: var(--dynamic-hover);
+// $dynamic-press: var(--dynamic-press);
 
-$primary-text-selected: rgba($primary, .87);
+$primary-text-selected: rgba($primary, 0.87);
 
 // lengths
 $btn-height: 24px;

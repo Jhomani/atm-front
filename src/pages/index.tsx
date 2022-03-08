@@ -1,16 +1,24 @@
-import {
-  Button, DropDown, Language, Modal
-} from '@components/index';
-import React, {
-  memo, useEffect, useState
-} from 'react';
+import {Button, DropDown, Language, Modal} from '@components/index';
+import React, {memo, useEffect, useState} from 'react';
 import {useSelector} from 'react-redux';
 
 const options = [
   {
     key: 0,
-    label: 'Carlos'
-  }
+    label: 'Carlos',
+  },
+  {
+    key: 1,
+    label: 'Juan',
+  },
+  {
+    key: 2,
+    label: 'Antonio',
+  },
+  {
+    key: 3,
+    label: 'Mamani',
+  },
 ];
 
 const IntoModal = () => {
@@ -24,11 +32,7 @@ const IntoModal = () => {
     };
   }, []);
 
-  return (
-    <div>
-      Hello world from modal {locale}!!!!
-    </div>
-  );
+  return <div>Hello world from modal {locale}!!!!</div>;
 };
 
 const IntoModal2 = () => {
@@ -41,11 +45,7 @@ const IntoModal2 = () => {
     };
   }, []);
 
-  return (
-    <div>
-      Hello world from modal 2 {locale}!!!!
-    </div>
-  );
+  return <div>Hello world from modal 2 {locale}!!!!</div>;
 };
 
 const IndexPage = () => {
@@ -57,49 +57,53 @@ const IndexPage = () => {
     console.log(selected, 'in used');
   };
 
-  return <>
-    <div className="landing">
-      <h2 className="landing-title g-my-4">
-        <Language langKey="landingTitle" />
-      </h2>
+  return (
+    <>
+      <div className="landing">
+        <h2 className="landing-title g-my-4">
+          <Language langKey="landingTitle" />
+        </h2>
 
-      <DropDown
-        options={options}
-        initial={0}
-        onSelected={handleSelected}
-      />
+        <DropDown options={options} initial={0} onSelected={handleSelected} />
 
-      <Button
-        type="primary"
-        onPress={() => setVisible(true)}
-        content="Open Modal"
-      />
+        <DropDown
+          type="primary"
+          options={options}
+          initial={0}
+          onSelected={handleSelected}
+        />
 
-      <Button
-        type="primary"
-        className='mt-2'
-        onPress={() => setVisibles(true)}
-        content="Open Modal 2"
-      />
+        <Button
+          type="primary"
+          onPress={() => setVisible(true)}
+          content="Open Modal"
+        />
 
-      <Modal
-        onCancel={() => setVisible(false)}
-        header="Hello from modal 1"
-        visible={visible}
-      >
-        <IntoModal />
-      </Modal>
+        <Button
+          type="primary"
+          className="mt-2"
+          onPress={() => setVisibles(true)}
+          content="Open Modal 2"
+        />
 
-      <Modal
-        onCancel={() => setVisibles(false)}
-        header="Hello from modal 2"
-        visible={visibles}
-      >
-        <IntoModal2 />
-      </Modal>
+        <Modal
+          onCancel={() => setVisible(false)}
+          header="Hello from modal 1"
+          visible={visible}
+        >
+          <IntoModal />
+        </Modal>
 
-    </div>
-  </>;
+        <Modal
+          onCancel={() => setVisibles(false)}
+          header="Hello from modal 2"
+          visible={visibles}
+        >
+          <IntoModal2 />
+        </Modal>
+      </div>
+    </>
+  );
 };
 
 export default memo(IndexPage);

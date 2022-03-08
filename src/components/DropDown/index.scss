@@ -1,9 +1,34 @@
 .select-container {
-  display: inline-block;
+  &.primary {
+    .selected > button[role],
+    .options .selected span {
+      color: $primary-emphasis;
+    }
 
-  &.primary > button[role] {
-    color: $primary-emphasis;
+    .selected > button[role]:focus,
+    .options li span {
+      color: $primary-helper;
+    }
+
+    .options {
+      .selected::before {
+        background-color: $primary-selected;
+      }
+
+      li {
+        position: relative;
+        padding: 7.5px 7px;
+
+        &:hover::before {
+          background-color: $primary-hover;
+        }
+      }
+    }
   }
+}
+
+.select-container {
+  display: inline-block;
 
   &,
   .selected {
@@ -37,8 +62,9 @@
   }
 
   .selected > button[role]:focus {
-    color: $primary-helper;
+    color: var(--text-helper);
   }
+
   .selected > button[role]:focus + .selectIcon {
     transform: translateY(50%) rotate(180deg);
   }
@@ -57,12 +83,22 @@
     cursor: pointer;
     z-index: 1;
 
+    .selected {
+      span {
+        color: var(--text-emphasis);
+      }
+
+      &::before {
+        background-color: var(--dynamic-selected);
+      }
+    }
+
     li {
       position: relative;
       padding: 7.5px 7px;
 
       span {
-        color: $primary-helper;
+        color: var(--text-helper);
         position: relative;
       }
 
@@ -74,7 +110,7 @@
       }
 
       &:hover::before {
-        background-color: $dynamic-hover;
+        background-color: var(--dynamic-hover);
       }
       &:first-child {
         padding-top: 8.5px;

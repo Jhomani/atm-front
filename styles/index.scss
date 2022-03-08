@@ -1,9 +1,12 @@
-@import "./global/index.scss";
-@import "./components/index.scss";
+@import './global/index.scss';
+@import './components/index.scss';
 @import './componets.scss';
-@import "./landing/index.scss";
+@import './landing/index.scss';
 
-html, *::before, *::after, * {
+html,
+*::before,
+*::after,
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -20,7 +23,10 @@ ul {
   list-style: none;
 }
 
-button, li, a, .options {
+button,
+li,
+a,
+.options {
   outline: 0;
 }
 
@@ -32,25 +38,27 @@ html {
 :root {
   --bg-color: #f0f0f0;
   --bg-navbar: #fff;
-  --secondary: #E8E8E8;
+  --secondary: #e8e8e8;
 
   --text-emphasis: #{$dark-emphasis};
-  --text-helper: rgba(#000, .60);
-  --text-disabled: rgba(#000, .38);
+  --text-helper: #{$dark-helper};
+  --text-disabled: #{$dark-disabled};
 
-  --dynamic-hover: $dark-hover;
-  --dynamic-press: $dark-press;
+  --dynamic-hover: #{$dark-hover};
+  --dynamic-press: #{$dark-press};
+  --dynamic-selected: #{$dark-selected};
 }
 
 .dark-mode {
   --bg-color: #18191a;
   --bg-navbar: #242526;
-  --secondary: #3A3B3C;
+  --secondary: #3a3b3c;
 
   --text-emphasis: #{$light-emphasis};
-  --text-helper: rgba(#fff, .60);
-  --text-disabled: rgba(#fff, .38);
+  --text-helper: #{$light-helper};
+  --text-disabled: #{$light-disabled};
 
-  --dynamic-hover: $light-hover;
-  --dynamic-press: $light-press;
+  --dynamic-hover: #{$light-hover};
+  --dynamic-press: #{$light-press};
+  --dynamic-selected: #{$light-selected};
 }

@@ -1,22 +1,28 @@
 // main colors
 .primary-emphasis {
   color: $primary-emphasis;
+  fill: $primary-emphasis;
 }
 .primary-helper {
   color: $primary-helper;
+  fill: $primary-helper;
 }
 .primary-disabled {
   color: $primary-disabled;
+  fill: $primary-disabled;
 }
 
 .txt-emphasis {
   color: var(--text-emphasis);
+  fill: var(--text-emphasis);
 }
 .txt-helper {
-  color: $text-helper;
+  color: var(--text-helper);
+  fill: var(--text-helper);
 }
 .txt-disabled {
-  color: $text-disabled;
+  color: var(--text-disabled);
+  fill: var(--text-disabled);
 }
 
 .bg-primary {
