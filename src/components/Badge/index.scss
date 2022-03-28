@@ -1,0 +1,21 @@
+.badge {
+  position: relative;
+  width: fit-content;
+  display: inline-block;
+
+  .badge-quantity {
+    position: absolute;
+    background-color: #1565c0;
+    border-radius: 20px;
+    font-size: 13px;
+    padding: 4px;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    top: 0;
+    right: 0;
+    transform: translate(40%, -40%);
+    z-index: 1;
+  }
+}

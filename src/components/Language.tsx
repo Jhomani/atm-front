@@ -4,7 +4,7 @@ import React from 'react';
 import {useSelector} from 'react-redux';
 
 interface InLagCom {
-  langKey: string
+  langKey: string;
 }
 
 export const Language = ({langKey}: InLagCom) => {

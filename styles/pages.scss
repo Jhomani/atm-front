@@ -1,0 +1,17 @@
+.bank-details {
+  display: flex;
+  column-gap: 40px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+
+  .bill-section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .total-amout-section {
+    display: flex;
+    align-items: baseline;
+  }
+}
